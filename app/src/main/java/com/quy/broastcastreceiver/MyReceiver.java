@@ -36,5 +36,10 @@ public class MyReceiver extends BroadcastReceiver {
                 }
             }
         }
+        //Receive intent from Service  to make a Toast or anything you like.
+        if (intent.getAction().equalsIgnoreCase("com.quy.chat")) {
+            Toast.makeText(context, bundle.getString("ser")+"", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }

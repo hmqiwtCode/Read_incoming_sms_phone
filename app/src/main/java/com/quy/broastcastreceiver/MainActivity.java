@@ -44,6 +44,23 @@ public class MainActivity extends AppCompatActivity {
         intent.setComponent(new ComponentName(getPackageName(),"com.quy.broastcastreceiver.MyReceiver"));
         getApplicationContext().sendBroadcast(intent);
     }
+    Intent intent;
+    public void sendItentService(View view){
+        if(!MyService.isRunning){
+            MyService.isRunning = true;
+            intent = new Intent(this,MyService.class);
+            startService(intent);
+        }
+
+    }
+
+    public void stopService(View view){
+        if(MyService.isRunning){
+            MyService.isRunning = false;
+            stopService(intent);
+        }
+
+    }
 
     @Override
     protected void onStop() {
