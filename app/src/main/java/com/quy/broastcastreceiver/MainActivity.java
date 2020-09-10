@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
         registerReceiver(myReceiver,intentFilter);
+        //not
     }
 
     public void sendBroadcast(View view){
